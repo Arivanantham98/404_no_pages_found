@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/index.css " />
+    <title>404 Page</title>
+  </head>
+  <body>
+    <div>
+      <lottie-player
+        src="./assets/404.json"
+        background="transparent"
+        speed="1"
+        style="width: 500px; height: 500px"
+        autoplay
+      ></lottie-player>
+      <h2 class="fourofour2">Page Not Found!</h2>
+      <button type="button" class="zoom btn btn-dark">Go To Home</button>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+      <script>
+        gsap.from("div", { opacity: 0, duration: 3, y: -50 });
+        gsap.set(".fourofour2", { scale: 1 });
+        const tl = gsap.timeline({
+          repeat: -1,
+          delay: 3,
+          defaults: {
+            duration: 0.5,
+            ease: "none",
+          },
+        });
+        tl.to(".fourofour2", { scale: 1.1 });
+        tl.to(".fourofour2", { scale: 1 });
+      </script>
+    </div>
+  </body>
+</html>
